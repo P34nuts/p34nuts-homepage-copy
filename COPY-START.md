@@ -1,1 +1,1 @@
-Trigger exact homepage copy after workflow fix.
+Retry exact homepage copy after forcing ignored files into Git.
