@@ -1,1 +1,0 @@
-Retry exact 1:1 homepage synchronization.

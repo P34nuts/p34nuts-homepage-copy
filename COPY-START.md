@@ -1,1 +1,0 @@
-Retry exact homepage copy after forcing ignored files into Git.
