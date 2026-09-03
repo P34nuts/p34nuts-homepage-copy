@@ -27,7 +27,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf -- {} +
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name 'source-homepage' -exec rm -rf -- {} +
           cp -a source-homepage/. .
           rm -rf source-homepage
       - name: Commit exact copy
