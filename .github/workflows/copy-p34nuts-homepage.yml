@@ -27,19 +27,25 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          rm -rf source-homepage/.git
           find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name 'source-homepage' -exec rm -rf -- {} +
           cp -a source-homepage/. .
           rm -rf source-homepage
+          test -f App.tsx
+          test -f package.json
+          echo "Source files copied successfully."
       - name: Commit exact copy
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A -f
+          git add -A -f .
+          echo "Staged files:"
+          git diff --cached --name-only | wc -l
           if git diff --cached --quiet; then
             echo 'No changes to commit.'
             exit 0
           fi
           git commit -m 'Copy P34nuts homepage 1:1'
-          git push
+          git push origin HEAD:main
