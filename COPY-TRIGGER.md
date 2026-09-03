@@ -1,1 +1,1 @@
-Temporary trigger for the exact homepage copy workflow.
+Retry exact 1:1 homepage synchronization.
