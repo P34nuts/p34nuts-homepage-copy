@@ -16,6 +16,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Checkout original P34nuts homepage
         uses: actions/checkout@v4
         with:
@@ -23,6 +24,8 @@ jobs:
           ref: main
           path: source-homepage
           fetch-depth: 1
+          lfs: true
+
       - name: Replace target with exact source copy
         shell: bash
         run: |
@@ -31,9 +34,10 @@ jobs:
           find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name 'source-homepage' -exec rm -rf -- {} +
           cp -a source-homepage/. .
           rm -rf source-homepage
-          test -f App.tsx
+          test -f client/src/App.tsx
           test -f package.json
-          echo "Source files copied successfully."
+          echo "Exact source checkout copied successfully."
+
       - name: Commit exact copy
         shell: bash
         run: |
