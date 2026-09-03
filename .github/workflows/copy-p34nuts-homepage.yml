@@ -17,26 +17,27 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Checkout original P34nuts homepage
-        uses: actions/checkout@v4
-        with:
-          repository: P34nuts/p34nuts-official-website
-          ref: main
-          path: source-homepage
-          fetch-depth: 1
-          lfs: true
+      - name: Download original homepage as ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -L --fail --retry 3 https://github.com/P34nuts/p34nuts-official-website/archive/refs/heads/main.zip -o source.zip
+          unzip -q source.zip
+          rm source.zip
 
       - name: Replace target with exact source copy
         shell: bash
         run: |
           set -euo pipefail
-          rm -rf source-homepage/.git
-          find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name 'source-homepage' -exec rm -rf -- {} +
-          cp -a source-homepage/. .
-          rm -rf source-homepage
+          SRC=$(find . -maxdepth 1 -type d -name 'p34nuts-official-website-*' | head -n 1)
+          test -n "$SRC"
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name "$SRC" -exec rm -rf -- {} +
+          cp -a "$SRC"/. .
+          rm -rf "$SRC"
           test -f client/src/App.tsx
+          test -f client/src/pages/Home.tsx
           test -f package.json
-          echo "Exact source checkout copied successfully."
+          echo "Source files copied successfully."
 
       - name: Commit exact copy
         shell: bash
