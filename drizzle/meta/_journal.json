@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1786746305601,
+      "tag": "0000_red_weapon_omega",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1786781143510,
+      "tag": "0001_oval_dreadnoughts",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1786975365430,
+      "tag": "0002_abandoned_dazzler",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1786977887779,
+      "tag": "0003_rare_prowler",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1786979606321,
+      "tag": "0004_bitter_meggan",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1786986490983,
+      "tag": "0005_mixed_maddog",
+      "breakpoints": true
+    }
+  ]
+}

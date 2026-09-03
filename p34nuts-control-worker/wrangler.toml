@@ -1,0 +1,20 @@
+name = "p34nuts-control-center"
+main = "src/index.ts"
+compatibility_date = "2026-08-19"
+workers_dev = true
+
+[limits]
+cpu_ms = 10
+
+[secrets]
+required = [
+  "GITHUB_APP_ID",
+  "GITHUB_APP_PRIVATE_KEY",
+  "GITHUB_APP_INSTALLATION_ID",
+  "GITHUB_CLIENT_ID",
+  "GITHUB_CLIENT_SECRET",
+  "CONTROL_SESSION_SECRET"
+]
+
+[vars]
+ALLOWED_ORIGINS = "https://p34nuts.github.io"

@@ -1,0 +1,5 @@
+# FIND-YOUR-ENTRY und Gästebuch — QA vom 17. August 2026
+
+Der reale Klick auf einen aktuell rotierenden FIND-YOUR-ENTRY-Kader wurde in der lokalen Preview geprüft. Ausgehend von einer weit unten liegenden Startseitenposition führte der Klick zu `/music/dein-name-auf-nem-stein`; die Zielroute begann bei `scrollY = 0` und zeigte die obere Songdetail-Heroansicht. Der Schutz greift dreifach: beim Pointer-Kontakt, beim Klick und global bei jeder Wouter-Routenänderung; die browserseitige Scroll-Restoration wird für die SPA auf `manual` gesetzt.
+
+Die Gästebuchvorschau zeigt für bestehende Beiträge den rückwärtskompatiblen Standardnamen **Gast** sowie Datum und Uhrzeit im deutschen Format. Das neue Pflichtfeld **Dein Name** ist sichtbar und vor der Nachricht angeordnet. Der Feed besitzt eine eigene, begrenzte Scrollfläche mit sichtbarer Scrollbar und Tastaturfokus, sodass zusätzliche Beiträge die Länge der Startseite nicht mehr unbegrenzt vergrößern. Es wurden keine künstlichen Gästebucheinträge angelegt.

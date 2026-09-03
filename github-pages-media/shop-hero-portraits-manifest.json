@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "entryCount": 10,
+  "purpose": "Decorative, responsive portrait sequence on the P34nuts merch shop landing-page hero.",
+  "records": [
+    {
+      "relativePath": "shop-hero-portraits/p34nuts-hero-sit-forward.png",
+      "source": "user-provided transparent PNG",
+      "hasAlpha": true
+    },
+    {
+      "relativePath": "shop-hero-portraits/p34nuts-hero-crouch-forward.png",
+      "source": "user-provided transparent PNG",
+      "hasAlpha": true
+    },
+    {
+      "relativePath": "shop-hero-portraits/p34nuts-hero-back-arms.png",
+      "source": "user-provided transparent PNG",
+      "hasAlpha": true
+    },
+    {
+      "relativePath": "shop-hero-portraits/p34nuts-hero-throne.png",
+      "source": "user-provided transparent PNG",
+      "hasAlpha": true
+    },
+    {
+      "relativePath": "shop-hero-portraits/p34nuts-hero-crown-seat.png",
+      "source": "user-provided PNG; neutral checkerboard background removed to create an RGBA cutout",
+      "hasAlpha": true
+    },
+    {
+      "relativePath": "shop-hero-portraits/p34nuts-hero-microphone.png",
+      "source": "user-provided transparent PNG",
+      "hasAlpha": true
+    },
+    {
+      "relativePath": "shop-hero-portraits/p34nuts-hero-kneel.png",
+      "source": "user-provided PNG; black background removed to create an RGBA cutout",
+      "hasAlpha": true
+    },
+    {
+      "relativePath": "shop-hero-portraits/p34nuts-hero-back-glass.png",
+      "source": "user-provided PNG; neutral checkerboard background removed to create an RGBA cutout",
+      "hasAlpha": true
+    },
+    {
+      "relativePath": "shop-hero-portraits/p34nuts-hero-back-wings.png",
+      "source": "user-provided PNG; neutral checkerboard background removed to create an RGBA cutout",
+      "hasAlpha": true
+    },
+    {
+      "relativePath": "shop-hero-portraits/p34nuts-hero-back-logo.png",
+      "source": "user-provided PNG; neutral checkerboard background removed to create an RGBA cutout",
+      "hasAlpha": true
+    }
+  ]
+}

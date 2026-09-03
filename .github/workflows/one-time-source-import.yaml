@@ -1,0 +1,56 @@
+name: Import P34nuts
+
+on: workflow_dispatch
+
+permissions:
+
+  contents: write
+  
+jobs:
+
+  x:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+      - uses: actions/checkout@v4
+      
+      - run: |
+      
+          curl -fsSL -o /tmp/z https://files.manuscdn.com/user_upload_by_module/session_file/310519663893057976/NHzmuDVMhEYtiNpU.zip
+          
+          curl -fsSL -o /tmp/m https://files.manuscdn.com/user_upload_by_module/session_file/310519663893057976/fJcRiRGupmrvqneR.zip
+          
+          echo 'a840bef488762a531900d3c98bde911e6cf8072e6d28dc2d7988912abda8b1c4  /tmp/z' | sha256sum -c -
+          
+          echo '3bd49af8dcdea9ab10353d8000a3f27598aa815e7c69a0d6f076c9007a6a7e85  /tmp/m' | sha256sum -c -
+          
+          unzip -q /tmp/z -d /tmp/i
+          
+          rsync -a --delete --exclude=.git --exclude=.github --exclude=.manus --exclude=node_modules --exclude=dist --exclude=github-pages-media --exclude='.env*' /tmp/i/official/ ./
+          
+          unzip -qo /tmp/m -d .
+          
+          git config user.name import; git config user.email import@users.noreply.github.com
+          
+          git add -A; git diff --cached --quiet || git commit -m 'Sync homepage scroll and guestbook updates'
+          
+          git push
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

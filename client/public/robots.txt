@@ -1,0 +1,4 @@
+# Replace with a custom domain if one is attached later.
+User-agent: *
+Allow: /
+Sitemap: https://p34nuts.github.io/Mondfall/sitemap.xml

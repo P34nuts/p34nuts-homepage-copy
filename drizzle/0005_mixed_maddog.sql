@@ -1,0 +1,1 @@
+ALTER TABLE `guestbook_entries` ADD `name` varchar(80) DEFAULT 'Gast' NOT NULL;

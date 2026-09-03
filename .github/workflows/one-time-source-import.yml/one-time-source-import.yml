@@ -1,0 +1,20 @@
+name: Import prepared P34nuts source
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          curl -fsSL -o source.zip https://files.manuscdn.com/user_upload_by_module/session_file/310519663893057976/QkHUXgHUPNaiwvjz.zip
+          echo '2bea5a90dca6676ecb5b0031ec8a784970ece38f1e5956a37dc524f9af44d813  source.zip' | sha256sum -c -
+          unzip -q source.zip -d imported
+          rsync -a --delete --exclude=.git --exclude=.manus --exclude=node_modules --exclude=dist --exclude='.env*' --exclude=.github/workflows/one-time-source-import.yml imported/official/ ./
+          rm -f .github/workflows/one-time-source-import.yml
+          git config user.name 'P34nuts Pages Import'
+          git config user.email 'pages-import@users.noreply.github.com'
+          git add -A
+          git diff --cached --quiet || git commit -m 'Publish direct guestbook and reactions'
+          git push
