@@ -27,7 +27,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          rsync -a --delete --exclude='.git/' source-homepage/ ./
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf -- {} +
+          cp -a source-homepage/. .
           rm -rf source-homepage
       - name: Commit exact copy
         shell: bash
